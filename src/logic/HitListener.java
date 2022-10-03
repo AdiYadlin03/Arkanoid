@@ -1,4 +1,3 @@
-// ID: 315126433
 package logic;
 import objects.Ball;
 import objects.Block;

@@ -1,4 +1,3 @@
-// ID: 315126433
 package animation;
 
 import biuoop.DrawSurface;

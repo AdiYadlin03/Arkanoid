@@ -1,5 +1,3 @@
-// ID: 315126433
-
 package collision;
 import geometry.Point;
 

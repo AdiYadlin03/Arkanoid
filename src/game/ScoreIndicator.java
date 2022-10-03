@@ -1,4 +1,3 @@
-// ID: 315126433
 package game;
 
 import biuoop.DrawSurface;

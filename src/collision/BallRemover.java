@@ -1,5 +1,3 @@
-// ID: 315126433
-
 package collision;
 import game.GameLevel;
 import logic.HitListener;
@@ -27,7 +25,7 @@ public class BallRemover implements HitListener {
     }
 
     /**
-     * Balls that hit the death block in the bottom of the screen
+     * Balls that hit the death block at the bottom of the screen
      * should be removed.
      * @param beingHit the block that is being hit
      * @param hitter the ball that hits the block

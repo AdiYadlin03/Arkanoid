@@ -1,10 +1,8 @@
-// ID: 315126433
 package animation;
 
 import biuoop.DrawSurface;
 import biuoop.KeyboardSensor;
 
-import java.awt.*;
 
 /**
  * @author Adi Yadlin
@@ -27,7 +25,7 @@ public class GameOver implements Animation {
     }
     @Override
     public void doOneFrame(DrawSurface d) {
-        d.drawText(d.getWidth() / 4, d.getHeight() / 2, "Game Over. Your score is " + this.score, 32);
+        d.drawText(d.getWidth() / 5, d.getHeight() / 2, "Game Over. Your score is " + this.score, 32);
     }
 
     @Override

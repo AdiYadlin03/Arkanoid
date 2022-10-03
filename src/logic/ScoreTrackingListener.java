@@ -1,5 +1,3 @@
-//ID: 315126433
-
 package logic;
 import game.Counter;
 import objects.Ball;

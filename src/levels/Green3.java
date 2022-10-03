@@ -47,7 +47,9 @@ public class Green3 implements LevelInformation{
     public List<Block> blocks() {
         List<Block> blockList = new ArrayList<>();
         int width = 52, height = 20;
-        java.awt.Color[] colors = {Color.WHITE, Color.BLUE, Color.YELLOW, Color.red, Color.GRAY};
+        java.awt.Color color1 = new Color(102, 255, 102);
+        java.awt.Color color2 = new Color(0, 153, 0);
+        java.awt.Color[] colors = {color1, color2, color1, color2, color1};
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 6 + i; j++) {
                 Block block = new Block(new geometry.Rectangle(new Point(790 - width - (width * j),

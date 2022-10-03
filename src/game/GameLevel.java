@@ -1,4 +1,3 @@
-// ID: 315126433
 package game;
 
 import animation.*;
@@ -77,28 +76,35 @@ public class  GameLevel implements Animation {
      * and add them to the game.
      */
     public void initialize() {
-        //this.runner = new AnimationRunner(60, new GUI("Arkanoid", WIDTH, HEIGHT));
-        //score board
-        this.scoreIndicator = new ScoreIndicator(score);
+        //add background to level
         this.sprites.addSprite(this.levelInformation.getBackground());
-        scoreIndicator.addToGame(this);
         LevelName levelName = new LevelName(this.levelInformation.levelName());
         levelName.addToGame(this);
         //initialize level
         //paddle
-        this.paddle = new Paddle(this.keyboardSensor,
-                new Rectangle(new Point((double) (WIDTH / 2) - (double) (this.levelInformation.paddleWidth() / 2),
-                600 - PADDLE_HEIGHT - FRAME_SIZE), this.levelInformation.paddleWidth(), PADDLE_HEIGHT),
-                this.levelInformation.paddleSpeed());
-        this.paddle.addToGame(this);
+        buildPaddle();
         //balls
         buildBalls();
         //sides
         buildSides();
         //blocks
         buildBlocks();
+        //score board
+        this.scoreIndicator = new ScoreIndicator(score);
+        scoreIndicator.addToGame(this);
         //the next thing to happen is the run of the game
         this.running = true;
+    }
+
+    /**
+     * this method creates the paddle and adds it to the game.
+     */
+    private void buildPaddle() {
+        this.paddle = new Paddle(this.keyboardSensor,
+                new Rectangle(new Point((double) (WIDTH / 2) - (double) (this.levelInformation.paddleWidth() / 2),
+                600 - PADDLE_HEIGHT - FRAME_SIZE), this.levelInformation.paddleWidth(), PADDLE_HEIGHT),
+                this.levelInformation.paddleSpeed());
+        this.paddle.addToGame(this);
     }
 
     /**
@@ -131,24 +137,39 @@ public class  GameLevel implements Animation {
 
     /**
      * This method creates the walls for the game and adds them to the game.
+     * death block is a block that makes the ball leave the game.
      */
     private void buildSides() {
         BallRemover ballRemover = new BallRemover(this, this.counterOfBalls);
+        //creation of regular side blocks
         Block top = new Block(new Rectangle(new Point(0, FRAME_SIZE * 2), WIDTH, FRAME_SIZE), Color.GRAY);
         Block left = new Block(new Rectangle(new Point(0, FRAME_SIZE * 2), FRAME_SIZE, HEIGHT), Color.GRAY);
-        Block bottom = new Block(new Rectangle(new Point(FRAME_SIZE, HEIGHT + FRAME_SIZE), WIDTH, FRAME_SIZE),
-                Color.GRAY);
-        bottom.addHitListener(ballRemover);
         Block right = new Block(new Rectangle(new Point(WIDTH - FRAME_SIZE, FRAME_SIZE * 2), FRAME_SIZE, HEIGHT),
                 Color.GRAY);
+        //death blocks
+        Block top_death = new Block(new Rectangle(new Point(-10, FRAME_SIZE ), WIDTH*2, FRAME_SIZE), Color.red);
+        top_death.addHitListener(ballRemover);
+        Block left_death = new Block(new Rectangle(new Point(-10, FRAME_SIZE ), FRAME_SIZE, HEIGHT*2), Color.red);
+        left_death.addHitListener(ballRemover);
+        Block bottom = new Block(new Rectangle(new Point(FRAME_SIZE, HEIGHT + FRAME_SIZE), WIDTH*2, FRAME_SIZE),
+                Color.red);
+        bottom.addHitListener(ballRemover);
+        Block right_death = new Block(new Rectangle(new Point(WIDTH, FRAME_SIZE * 2), FRAME_SIZE, HEIGHT*2),
+                Color.red);
+        right_death.addHitListener(ballRemover);
+        //add blocks to game
         left.addToGame(this);
-        bottom.addToGame(this);
         right.addToGame(this);
         top.addToGame(this);
+        //add death blocks to game
+        left_death.addToGame(this);
+        bottom.addToGame(this);
+        right_death.addToGame(this);
+        top_death.addToGame(this);
     }
 
     /**
-     * Run the game- start the animation loop.
+     * Run the game - start the animation loop.
      */
     public void run() {
         this.runner.run(new CountdownAnimation(2, 3, this.sprites));

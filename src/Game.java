@@ -1,5 +1,3 @@
-// ID: 315126433
-
 import animation.AnimationRunner;
 import animation.GameOver;
 import animation.KeyPressStoppableAnimation;
@@ -30,10 +28,10 @@ public class Game {
         GameFlow flow = new GameFlow(ar, gui.getKeyboardSensor());
         List<LevelInformation> levelInformationList = new ArrayList<>();
         // add levels to the game
-        //levelInformationList.add(new DirectHit());
-        //levelInformationList.add(new WideEasy());
+        levelInformationList.add(new DirectHit());
+        levelInformationList.add(new WideEasy());
         levelInformationList.add(new Green3());
-        //levelInformationList.add(new FinalFour());
+        levelInformationList.add(new FinalFour());
         // run the wanted levels from the game flow
         flow.runLevels(levelInformationList);
         //End Screen

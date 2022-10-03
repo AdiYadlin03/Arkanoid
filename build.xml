@@ -15,7 +15,7 @@
     </target>
 
     <target name="run" depends="compile" >
-        <java classname="Ass6Game" classpath="${classpath}" fork="true"/>
+        <java classname="Game" classpath="${classpath}" fork="true"/>
     </target>
 
 

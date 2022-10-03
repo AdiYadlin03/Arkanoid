@@ -23,7 +23,7 @@ import java.awt.Color;
  * @author Adi Yadlin
  * This class represents a game.
  */
-public class GameLevel implements Animation {
+public class  GameLevel implements Animation {
     public static final int WIDTH = 800;
     public static final int HEIGHT = 600;
     public static final int RADIUS = 5;

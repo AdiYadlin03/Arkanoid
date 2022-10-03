@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class KeyPressStoppableAnimation implements Animation {
     private KeyboardSensor keyboardSensor;
-    private String key;
+    private String continueKey;
     private Animation animation;
     private Boolean stop = false;
     private boolean isAlreadyPressed = true;
@@ -15,12 +15,12 @@ public class KeyPressStoppableAnimation implements Animation {
     /**
      * Constructor.
      * @param sensor keyboard sensor
-     * @param key key
+     * @param continueKey this is the continue key, if pressed we need to go back to the game from the pausing screen
      * @param animation the animation
      */
-    public KeyPressStoppableAnimation(KeyboardSensor sensor, String key, Animation animation){
+    public KeyPressStoppableAnimation(KeyboardSensor sensor, String continueKey, Animation animation){
         this.animation = animation;
-        this.key = key;
+        this.continueKey = continueKey;
         this.keyboardSensor = sensor;
     }
 
@@ -28,7 +28,7 @@ public class KeyPressStoppableAnimation implements Animation {
     public void doOneFrame(DrawSurface d) {
         d.setColor(Color.black);
         this.animation.doOneFrame(d);
-        if (!this.isAlreadyPressed && this.keyboardSensor.isPressed(this.key)) {
+        if (this.isAlreadyPressed && this.keyboardSensor.isPressed(this.continueKey)) {
             this.stop = true;
             this.isAlreadyPressed = false;
         }

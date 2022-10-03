@@ -16,7 +16,7 @@ import java.awt.Color;
 public class Background3 implements Sprite {
     @Override
     public void drawOn(DrawSurface d) {
-        java.awt.Color color = new Color(42, 129, 21);
+        java.awt.Color color = new Color(20, 70, 40);
         new Block(new Rectangle(new Point(0, 0), 800, 600),
                 color).drawOn(d);
     }

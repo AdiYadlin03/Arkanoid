@@ -27,7 +27,7 @@ public class GameOver implements Animation {
     }
     @Override
     public void doOneFrame(DrawSurface d) {
-        d.drawText(200, d.getHeight() / 2, "Game Over. Your score is " + this.score, 32);
+        d.drawText(d.getWidth() / 4, d.getHeight() / 2, "Game Over. Your score is " + this.score, 32);
     }
 
     @Override

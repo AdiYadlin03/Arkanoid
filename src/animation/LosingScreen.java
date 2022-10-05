@@ -9,7 +9,7 @@ import biuoop.KeyboardSensor;
  * This is an end screen of the game if the player lost.
  */
 public class LosingScreen extends Screen {
-    private int score;
+    private final int score;
     /**
      * Constructor
      * @param keyboardSensor the keyboard sensor

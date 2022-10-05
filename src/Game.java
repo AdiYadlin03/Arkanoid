@@ -27,10 +27,7 @@ public class Game {
         GameFlow flow = new GameFlow(ar, gui.getKeyboardSensor());
         List<LevelInformation> levelInformationList = new ArrayList<>();
         // add levels to the game
-        levelInformationList.add(new DirectHit());
-        levelInformationList.add(new WideEasy());
-        levelInformationList.add(new Green3());
-        levelInformationList.add(new FinalFour());
+        add_all_levels(levelInformationList);
         // run the wanted levels from the game flow
         flow.runLevels(levelInformationList);
         //End Screen
@@ -42,5 +39,16 @@ public class Game {
                     new GameOver(gui.getKeyboardSensor(), flow.getScore())));
         }
         gui.close();
+    }
+
+    /**
+     * this method adds all the levels to the game
+     * @param levelInformationList
+     */
+    private static void add_all_levels(List<LevelInformation> levelInformationList) {
+        levelInformationList.add(new DirectHit());
+        levelInformationList.add(new WideEasy());
+        levelInformationList.add(new Green3());
+        levelInformationList.add(new FinalFour());
     }
 }

@@ -18,8 +18,8 @@ public class FinalFour implements LevelInformation{
     @Override
     public List<Velocity> initialBallVelocities() {
         List<Velocity> velocityList = new ArrayList<>();
-        velocityList.add(Velocity.fromAngleAndSpeed(40, 5));
-        velocityList.add(Velocity.fromAngleAndSpeed(-40, 5));
+        velocityList.add(Velocity.fromAngleAndSpeed(40, 3));
+        velocityList.add(Velocity.fromAngleAndSpeed(-30, 5));
         velocityList.add(Velocity.fromAngleAndSpeed(0, 4));
         return velocityList;
     }

@@ -14,8 +14,7 @@ public class PauseScreen extends Screen {
      * @param k the keyboard sensor
      */
     public PauseScreen(KeyboardSensor k) {
-        this.keyboardSensor = k;
-        this.stop = false;
+        super(k, false);
     }
 
     /**

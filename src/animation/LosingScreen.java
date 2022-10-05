@@ -16,8 +16,7 @@ public class LosingScreen extends Screen {
      * @param score the final score
      */
     public LosingScreen(KeyboardSensor keyboardSensor, int score) {
-        this.keyboardSensor = keyboardSensor;
-        this.stop = false;
+        super(keyboardSensor, false);
         this.score = score;
     }
     @Override

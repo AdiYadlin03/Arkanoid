@@ -16,6 +16,11 @@ public class Screen implements Animation{
     public static final int HEIGHT = 600;
     protected KeyboardSensor keyboardSensor;
     protected boolean stop;
+
+    public Screen(KeyboardSensor keyboardSensor, boolean stop){
+        this.keyboardSensor = keyboardSensor;
+        this.stop = stop;
+    }
     @Override
     public void doOneFrame(DrawSurface d) {
         // draw background

@@ -2,15 +2,10 @@ package animation;
 
 import biuoop.DrawSurface;
 import biuoop.KeyboardSensor;
-import geometry.Point;
-import objects.Block;
-import java.awt.*;
-
 public class StartingScreen extends Screen{
 
     public StartingScreen(KeyboardSensor keyboardSensor) {
-        this.keyboardSensor = keyboardSensor;
-        this.stop = false;
+        super(keyboardSensor,false);
     }
     @Override
     public void doOneFrame(DrawSurface d) {

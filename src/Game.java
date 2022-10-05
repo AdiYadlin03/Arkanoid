@@ -1,7 +1,4 @@
-import animation.AnimationRunner;
-import animation.GameOver;
-import animation.KeyPressStoppableAnimation;
-import animation.WinningScreen;
+import animation.*;
 import game.GameFlow;
 import levels.*;
 import biuoop.GUI;
@@ -26,6 +23,9 @@ public class Game {
         AnimationRunner ar = new AnimationRunner(60, gui);
         GameFlow flow = new GameFlow(ar, gui.getKeyboardSensor());
         List<LevelInformation> levelInformationList = new ArrayList<>();
+        // run starting screen
+        ar.run(new KeyPressStoppableAnimation(gui.getKeyboardSensor(),  "enter",
+                new StartingScreen(gui.getKeyboardSensor())));
         // add levels to the game
         add_all_levels(levelInformationList);
         // run the wanted levels from the game flow

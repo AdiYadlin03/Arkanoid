@@ -2,12 +2,16 @@ package animation;
 
 import biuoop.DrawSurface;
 import biuoop.KeyboardSensor;
+import geometry.Point;
+import objects.Block;
+
+import java.awt.*;
 
 /**
  * @author Adi Yadlin
  * This class represents the pause screen.
  */
-public class PauseScreen implements Animation {
+public class PauseScreen extends Screen {
     private KeyboardSensor keyboard;
     private boolean stop;
 
@@ -25,7 +29,8 @@ public class PauseScreen implements Animation {
      * @param d the surface to draw on
      */
     public void doOneFrame(DrawSurface d) {
-        d.drawText(d.getWidth() / 6, d.getHeight() / 2, "paused -- press space to continue", 32);
+        super.doOneFrame(d);
+        d.drawText(d.getWidth() / 6, d.getHeight() / 2, "Paused - press space to continue", 32);
     }
 
     /**

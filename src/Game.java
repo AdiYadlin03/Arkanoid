@@ -36,7 +36,7 @@ public class Game {
                     new WinningScreen(gui.getKeyboardSensor())));
         } else {
             ar.run(new KeyPressStoppableAnimation(gui.getKeyboardSensor(),  "space",
-                    new GameOver(gui.getKeyboardSensor(), flow.getScore())));
+                    new LosingScreen(gui.getKeyboardSensor(), flow.getScore())));
         }
         gui.close();
     }

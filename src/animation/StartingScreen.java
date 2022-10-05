@@ -4,12 +4,9 @@ import biuoop.DrawSurface;
 import biuoop.KeyboardSensor;
 import geometry.Point;
 import objects.Block;
-
 import java.awt.*;
 
-public class StartingScreen implements Animation{
-    public static final int WIDTH = 800;
-    public static final int HEIGHT = 600;
+public class StartingScreen extends Screen{
     private KeyboardSensor keyboardSensor;
     private boolean stop;
 
@@ -19,8 +16,7 @@ public class StartingScreen implements Animation{
     }
     @Override
     public void doOneFrame(DrawSurface d) {
-        new Block(new geometry.Rectangle(new Point(0, 0), WIDTH, HEIGHT), Color.pink).drawOn(d);
-        d.setColor(Color.white);
+        super.doOneFrame(d);
         d.drawText(d.getWidth() /4, d.getHeight() / 3, "Welcome to Arkanoid!", 32);
         d.drawText(d.getWidth() /4, d.getHeight() / 3 + 50, "Press enter to start playing", 20);
         d.drawText(d.getWidth() /4, d.getHeight() / 3 + 80, "Press p to pause the game", 20);

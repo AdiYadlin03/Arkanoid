@@ -12,10 +12,12 @@ import java.awt.Color;
  * This class contains the background for the forth level.
  */
 public class Background4 implements Sprite {
+    public static final int WIDTH = 800;
+    public static final int HEIGHT = 600;
     @Override
     public void drawOn(DrawSurface d) {
         java.awt.Color color = new Color(23, 135, 207);
-        new Block(new geometry.Rectangle(new Point(0, 0), 800, 600),
+        new Block(new geometry.Rectangle(new Point(0, 0), WIDTH, HEIGHT),
                 color).drawOn(d);
         d.setColor(new Color(186, 186, 186, 255));
         //lines

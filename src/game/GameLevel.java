@@ -102,7 +102,7 @@ public class  GameLevel implements Animation {
     private void buildPaddle() {
         this.paddle = new Paddle(this.keyboardSensor,
                 new Rectangle(new Point((double) (WIDTH / 2) - (double) (this.levelInformation.paddleWidth() / 2),
-                600 - PADDLE_HEIGHT - FRAME_SIZE), this.levelInformation.paddleWidth(), PADDLE_HEIGHT),
+                HEIGHT - PADDLE_HEIGHT - FRAME_SIZE), this.levelInformation.paddleWidth(), PADDLE_HEIGHT),
                 this.levelInformation.paddleSpeed());
         this.paddle.addToGame(this);
     }
@@ -127,7 +127,7 @@ public class  GameLevel implements Animation {
      */
     private void buildBalls() {
         for (int i = 0; i < this.levelInformation.numberOfBalls(); i++) {
-            Ball ball = new Ball(new Point((double) (WIDTH / 2), 600 - PADDLE_HEIGHT - 2 * FRAME_SIZE),
+            Ball ball = new Ball(new Point((double) (WIDTH / 2), HEIGHT - PADDLE_HEIGHT - 2 * FRAME_SIZE),
                     RADIUS, Color.WHITE);
             ball.setVelocity(this.levelInformation.initialBallVelocities().get(i));
             ball.addToGame(this);
@@ -243,8 +243,8 @@ public class  GameLevel implements Animation {
     }
 
     /**
-     * return true is there are no more balls in the game. else otherwise.
-     * @return true is there are no more balls in the game. else otherwise.
+     * return true is there are no more balls in the game. false otherwise.
+     * @return true is there are no more balls in the game. false otherwise.
      */
     public boolean isNoMoreBalls() {
         return this.counterOfBalls.getValue() == 0;

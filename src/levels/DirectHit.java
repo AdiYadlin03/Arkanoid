@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * @author Adi Yadlin
- * This is the first level- Direct Hit.
+ * This is the first level - Direct Hit.
  */
 public class DirectHit implements LevelInformation{
 

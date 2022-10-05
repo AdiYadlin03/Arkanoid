@@ -19,6 +19,7 @@ public class WinningScreen implements Animation{
     }
     @Override
     public void doOneFrame(DrawSurface d) {
+
         d.drawText(200, d.getHeight() / 2, "You Win! Your Score is 1205", 32);
     }
 

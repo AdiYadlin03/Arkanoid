@@ -13,9 +13,11 @@ import java.awt.Color;
  * This class contains the background for the first level.
  */
 public class Background1 implements Sprite {
+    public static final int WIDTH = 800;
+    public static final int HEIGHT = 600;
     @Override
     public void drawOn(DrawSurface d) {
-        new Block(new Rectangle(new Point(0, 0), 800, 600), Color.black).drawOn(d);
+        new Block(new Rectangle(new Point(0, 0), WIDTH, HEIGHT), Color.black).drawOn(d);
         d.setColor(Color.BLUE);
         d.drawCircle(400, 155, 90);
         d.drawCircle(400, 155, 60);

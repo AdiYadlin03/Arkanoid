@@ -2,25 +2,19 @@ package animation;
 
 import biuoop.DrawSurface;
 import biuoop.KeyboardSensor;
-import geometry.Point;
-import objects.Block;
-
-import java.awt.*;
 
 /**
  * @author Adi Yadlin
  * This class represents the pause screen.
  */
 public class PauseScreen extends Screen {
-    private KeyboardSensor keyboard;
-    private boolean stop;
 
     /**
      * Constructor.
      * @param k the keyboard sensor
      */
     public PauseScreen(KeyboardSensor k) {
-        this.keyboard = k;
+        this.keyboardSensor = k;
         this.stop = false;
     }
 

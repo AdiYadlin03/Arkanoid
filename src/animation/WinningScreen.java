@@ -12,8 +12,6 @@ import java.awt.*;
  * This is an end screen of the game if the player won.
  */
 public class WinningScreen extends Screen{
-    private KeyboardSensor keyboardSensor;
-    private boolean stop;
 
     public WinningScreen(KeyboardSensor keyboardSensor) {
         this.keyboardSensor = keyboardSensor;

@@ -7,8 +7,6 @@ import objects.Block;
 import java.awt.*;
 
 public class StartingScreen extends Screen{
-    private KeyboardSensor keyboardSensor;
-    private boolean stop;
 
     public StartingScreen(KeyboardSensor keyboardSensor) {
         this.keyboardSensor = keyboardSensor;

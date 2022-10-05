@@ -1,6 +1,7 @@
 package animation;
 
 import biuoop.DrawSurface;
+import biuoop.KeyboardSensor;
 import geometry.Point;
 import objects.Block;
 
@@ -13,6 +14,8 @@ import java.awt.*;
 public class Screen implements Animation{
     public static final int WIDTH = 800;
     public static final int HEIGHT = 600;
+    protected KeyboardSensor keyboardSensor;
+    protected boolean stop;
     @Override
     public void doOneFrame(DrawSurface d) {
         // draw background

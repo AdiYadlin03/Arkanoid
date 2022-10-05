@@ -10,9 +10,6 @@ import biuoop.KeyboardSensor;
  */
 public class LosingScreen extends Screen {
     private int score;
-    private KeyboardSensor keyboardSensor;
-    private boolean stop;
-
     /**
      * Constructor
      * @param keyboardSensor the keyboard sensor

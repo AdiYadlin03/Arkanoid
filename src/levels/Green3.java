@@ -64,4 +64,9 @@ public class Green3 implements LevelInformation{
     public int numberOfBlocksToRemove() {
         return 40;
     }
+
+    @Override
+    public int scoreToWinLevel() {
+        return (this.numberOfBlocksToRemove() * 5 + POINTS_FOR_PASSING_LEVEL);
+    }
 }

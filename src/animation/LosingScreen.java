@@ -22,7 +22,9 @@ public class LosingScreen extends Screen {
     @Override
     public void doOneFrame(DrawSurface d) {
         super.doOneFrame(d);
-        d.drawText(d.getWidth() / 5, d.getHeight() / 2, "Game Over. Your score is " + this.score, 32);
+        d.drawText(d.getWidth() / 3, d.getHeight() / 3, "You lost!", 35);
+        d.drawText(d.getWidth() / 3, d.getHeight() / 3 + 50, "Your score is " + this.score, 20);
+        d.drawText(d.getWidth() / 3, d.getHeight() / 3 + 80, "Press space to exit", 20);
     }
 
     @Override

@@ -81,4 +81,9 @@ public class WideEasy implements LevelInformation{
     public int numberOfBlocksToRemove() {
         return 15;
     }
+
+    @Override
+    public int scoreToWinLevel() {
+        return (this.numberOfBlocksToRemove() * 5 + POINTS_FOR_PASSING_LEVEL);
+    }
 }

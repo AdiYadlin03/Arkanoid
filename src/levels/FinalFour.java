@@ -12,15 +12,15 @@ import java.util.List;
 public class FinalFour implements LevelInformation{
     @Override
     public int numberOfBalls() {
-        return 3;
+        return 2;
     }
 
     @Override
     public List<Velocity> initialBallVelocities() {
         List<Velocity> velocityList = new ArrayList<>();
-        velocityList.add(Velocity.fromAngleAndSpeed(40, 3));
-        velocityList.add(Velocity.fromAngleAndSpeed(-30, 5));
-        velocityList.add(Velocity.fromAngleAndSpeed(0, 4));
+        velocityList.add(Velocity.fromAngleAndSpeed(60, 4));
+        velocityList.add(Velocity.fromAngleAndSpeed(-40, 4));
+        //velocityList.add(Velocity.fromAngleAndSpeed(0, 4));
         return velocityList;
     }
 
@@ -31,7 +31,7 @@ public class FinalFour implements LevelInformation{
 
     @Override
     public int paddleWidth() {
-        return 70;
+        return 120;
     }
 
     @Override
@@ -63,5 +63,10 @@ public class FinalFour implements LevelInformation{
     @Override
     public int numberOfBlocksToRemove() {
         return 105;
+    }
+
+    @Override
+    public int scoreToWinLevel() {
+        return (this.numberOfBlocksToRemove() * 5 + POINTS_FOR_PASSING_LEVEL);
     }
 }

@@ -7,17 +7,14 @@ import biuoop.KeyboardSensor;
  * @author Adi Yadlin
  * This class represents the pause screen.
  */
-public class PauseScreen implements Animation {
-    private KeyboardSensor keyboard;
-    private boolean stop;
+public class PauseScreen extends Screen {
 
     /**
      * Constructor.
      * @param k the keyboard sensor
      */
     public PauseScreen(KeyboardSensor k) {
-        this.keyboard = k;
-        this.stop = false;
+        super(k, false);
     }
 
     /**
@@ -25,7 +22,8 @@ public class PauseScreen implements Animation {
      * @param d the surface to draw on
      */
     public void doOneFrame(DrawSurface d) {
-        d.drawText(d.getWidth() / 6, d.getHeight() / 2, "paused -- press space to continue", 32);
+        super.doOneFrame(d);
+        d.drawText(d.getWidth() / 6, d.getHeight() / 2, "Paused - press space to continue", 32);
     }
 
     /**

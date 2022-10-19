@@ -18,8 +18,8 @@ public class Green3 implements LevelInformation{
     @Override
     public List<Velocity> initialBallVelocities() {
         List<Velocity> velocityList = new ArrayList<>();
-        velocityList.add(Velocity.fromAngleAndSpeed(40, 5));
-        velocityList.add(Velocity.fromAngleAndSpeed(-40, 5));
+        velocityList.add(Velocity.fromAngleAndSpeed(50, 5));
+        velocityList.add(Velocity.fromAngleAndSpeed(-50, 5));
         return velocityList;
     }
 
@@ -30,7 +30,7 @@ public class Green3 implements LevelInformation{
 
     @Override
     public int paddleWidth() {
-        return 70;
+        return 130;
     }
 
     @Override
@@ -63,5 +63,10 @@ public class Green3 implements LevelInformation{
     @Override
     public int numberOfBlocksToRemove() {
         return 40;
+    }
+
+    @Override
+    public int scoreToWinLevel() {
+        return (this.numberOfBlocksToRemove() * 5 + POINTS_FOR_PASSING_LEVEL);
     }
 }

@@ -10,6 +10,8 @@ import java.util.List;
  * This is the interface for the levels of the game.
  */
 public interface LevelInformation {
+    public static final int POINTS_FOR_PASSING_LEVEL = 100;
+
     /**
      * The number of balls.
      * @return number of balls
@@ -60,4 +62,10 @@ public interface LevelInformation {
      * @return the number of blocks to remove to finish the level.
      */
     int numberOfBlocksToRemove();
+
+    /**
+     * Returns the score needed to win the level
+     * @return score needed to win the level
+     */
+    int scoreToWinLevel();
 }

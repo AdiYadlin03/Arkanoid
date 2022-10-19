@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * @author Adi Yadlin
- * This is the first level- Direct Hit.
+ * This is the first level - Direct Hit.
  */
 public class DirectHit implements LevelInformation{
 
@@ -59,5 +59,10 @@ public class DirectHit implements LevelInformation{
     @Override
     public int numberOfBlocksToRemove() {
         return 1;
+    }
+
+    @Override
+    public int scoreToWinLevel() {
+        return (this.numberOfBlocksToRemove() * 5 + POINTS_FOR_PASSING_LEVEL);
     }
 }

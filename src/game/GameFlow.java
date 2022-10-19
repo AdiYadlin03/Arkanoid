@@ -26,7 +26,7 @@ public class GameFlow {
             }
             // add the score from the level
             //this.score.increase(this.score.getValue() + level.getScore().getValue());
-            // if there are np more balls in the game
+            // if there are no more balls in the game
             if (level.isNoMoreBalls()) {
                 break;
             }
